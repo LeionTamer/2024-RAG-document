@@ -25,9 +25,12 @@ export function getSupbaseVectorStore() {
 }
 
 export async function saveDocuments(documents: Document[]) {
-  const client = getSupabaseClient()
-
   const store = getSupbaseVectorStore()
 
-  await store.addDocuments(documents)
+  const formattedDocuments: Document[] = documents.map((doc) => ({
+    ...doc,
+    pageContent: doc.pageContent.replace('\n', ''),
+  }))
+
+  await store.addDocuments(documents, {})
 }

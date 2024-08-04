@@ -30,6 +30,7 @@ function FileUpload() {
       />
       <Button
         type="submit"
+        className="w-32"
         disabled={!file || isPending}
         onClick={() => uploadFileClient()}
       >
