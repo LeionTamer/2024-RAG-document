@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { useMutation } from '@tanstack/react-query'
-import { uploadFile } from './actions/file-upload'
+import { uploadFile } from './actions/file-actions'
 
 function FileUpload() {
   const [file, setFile] = useState<File | null>(null)

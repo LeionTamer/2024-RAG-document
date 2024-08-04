@@ -85,6 +85,7 @@ npx create-next-app@latest
 npm i @tanstack/react-query
 npm install --save openai
 npm install @supabase/supabase-js
+npm install pdf-parse
 npm install --save langchain @langchain/openai @langchain/community
 ```
 
