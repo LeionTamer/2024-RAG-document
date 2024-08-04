@@ -1,5 +1,6 @@
 'use server'
 
+import { saveDocuments } from '@/lib/supabase'
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 
@@ -20,6 +21,7 @@ export async function uploadFile(fomData: FormData) {
     })
 
     const documents = await splitter.splitDocuments(document)
+    saveDocuments(documents)
   } catch (error) {
     console.error(error)
   }
