@@ -22,14 +22,46 @@ Run the application locally
 npm run dev
 ```
 
-## Building the application
-
-Create a new app with NextJS
-
-```bash
-npx create-next-app@latest
-```
+## Other setups
 
 ### Supabase script
 
 Run the scripts in your supabase account to allow pg_vector support and prepare the database table
+
+## Building the application
+
+Base setup
+
+```bash
+npx create-next-app@latest
+npm i @tanstack/react-query
+```
+
+We will be using tanstack to run server actions using mutations
+
+### Install Prettier (optional)
+
+```bash
+npm install --save-dev prettier-eslint
+```
+
+<details>
+<summary>Add a prettier config file `.prettierrc`</summary>
+
+```json
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true
+}
+```
+
+</details>
+
+### Install ShadCDN UI and the components (optional)
+
+```bash
+npx shadcn-ui@latest init
+npx shadcn-ui@latest add button card input textarea
+```
